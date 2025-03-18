@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sales Prediction App</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 500px; margin: auto; }
+        input, button { width: 100%; padding: 10px; margin: 5px 0; }
+        button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📈 Sales Prediction App</h1>
+        <form method="POST" action="/predict">
+            <input type="text" name="feature1" placeholder="Enter Feature 1" required>
+            <input type="text" name="feature2" placeholder="Enter Feature 2" required>
+            <input type="text" name="feature3" placeholder="Enter Feature 3" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+        <h2>Result: {{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
